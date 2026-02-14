@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Inter:wght@300;400;800&family=JetBrains+Mono:wght@500&display=swap');
+
+:root {
+    --bg: #050506;
+    --card-bg: #0f0f11;
+    --gold: #c5a059;
+    --steel: #a1a1aa;
+    --border: #222225;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    background-color: var(--bg);
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+/* --- TITRE MONSTRUEUX --- */
+header {
+    height: 40vh; /* Prend 40% de la hauteur de l'écran */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid var(--border);
+    background: radial-gradient(circle at center, #1a1a1d 0%, var(--bg) 100%);
+}
+
+h1 {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: clamp(4rem, 10vw, 8rem); /* Taille dynamique géante */
+    color: var(--gold);
+    margin: 0;
+    letter-spacing: 15px;
+    text-shadow: 0 0 30px rgba(197, 160, 89, 0.2);
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: var(--steel);
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    margin-top: 20px;
+}
+
+/* --- CONTENU GEANT --- */
+.main-layout {
+    display: grid;
+    grid-template-columns: 1fr; /* Une seule colonne très large */
+    padding: 50px;
+    gap: 50px;
+    max-width: 1600px;
+    margin: auto;
+}
+
+.section-hero {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    padding: 60px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.full-width {
+    grid-column: span 2;
+}
+
+h2 {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 2rem;
+    color: var(--gold);
+    margin-bottom: 30px;
+    border-left: 5px solid var(--gold);
+    padding-left: 20px;
+}
+
+/* --- LORE / DATA --- */
+.data-box {
+    font-size: 1.5rem; /* Texte bcp plus grand */
+    line-height: 2;
+}
+
+.data-box b { color: var(--gold); }
+
+/* --- TREE VISUALIZER --- */
+.tree-container {
+    background: #000;
+    padding: 40px;
+    border-radius: 10px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.3rem;
+    line-height: 2.5;
+}
+
+.error { color: #ff4b4b; text-decoration: line-through; opacity: 0.5; }
+.success { color: #00ff9d; }
+
+/* --- CODE BLOCK --- */
+pre {
+    background: #000;
+    padding: 40px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.2rem;
+    color: #e2e8f0;
+    border: 1px solid var(--border);
+    line-height: 1.8;
+}
+
+.comment { color: #555; }
+
+footer {
+    padding: 100px;
+    text-align: center;
+    opacity: 0.3;
+    letter-spacing: 5px;
+    font-size: 0.9rem;
+}

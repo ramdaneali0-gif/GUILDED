@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>GUILDED RECKONING | LARGE_DASHBOARD</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>GUILDED</h1>
+        <div class="subtitle">Continent Development // Session 2026</div>
+    </header>
+
+    <div class="main-layout">
+        
+        <section class="section-hero">
+            <div>
+                <h2>The Mission</h2>
+                <div class="data-box">
+                    • <b>Hero:</b> The Knight <br>
+                    • <b>Objective:</b> Save the King <br>
+                    • <b>Location:</b> Guilded Continent <br>
+                    • <b>Threats:</b> All Bosses
+                </div>
+            </div>
+            
+            <div>
+                <h2>System Status</h2>
+                <div class="data-box">
+                    • <b>Engine:</b> Godot 4.x <br>
+                    • <b>Physics:</b> <span style="color: #ff4b4b;">CRITICAL ERROR</span> <br>
+                    • <b>Script:</b> Integrated <br>
+                    • <b>Build:</b> v0.1
+                </div>
+            </div>
+        </section>
+
+        <section class="section-hero">
+            <div class="full-width">
+                <h2>Godot Physics Debugger</h2>
+                <div class="tree-container">
+                    <div>📦 Node2D (Guilded_Map)</div>
+                    <div class="error" style="margin-left: 40px;">👤 Knight (CharacterBody2D)</div>
+                    <div class="error" style="margin-left: 80px;">└─ 🗺️ TileMapLayer</div>
+                    
+                    <div style="margin: 40px 0; border-top: 1px dashed var(--border);"></div>
+                    
+                    <div>📦 Node2D (Guilded_Map)</div>
+                    <div class="success" style="margin-left: 40px;">👤 Knight (CharacterBody2D)</div>
+                    <div class="success" style="margin-left: 40px;">🗺️ TileMapLayer (Independent Node)</div>
+                </div>
+                <p style="font-size: 1.2rem; margin-top: 30px; color: var(--steel);">
+                    <b>NOTE:</b> Le Chevalier ne pourra pas atteindre les Boss si la collision de la TileMapLayer est activée sous son propre nœud. Sortez-la du Parent !
+                </p>
+            </div>
+        </section>
+
+        <section class="section-hero">
+            <div class="full-width">
+                <h2>Knight_Control.gd</h2>
+                <pre>
+extends CharacterBody2D
+
+const SPEED = 400.0
+
+func _physics_process(delta):
+    <span class="comment"># Navigation system for the Guilded Continent</span>
+    var direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+    
+    velocity = direction * SPEED
+    
+    <span class="comment"># Essential for colliding with Bosses</span>
+    move_and_slide()</pre>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        TERMINAL_ID: ORDI2527333 // TRANSMISSION_COMPLETE
+    </footer>
+
+</body>
+</html>
